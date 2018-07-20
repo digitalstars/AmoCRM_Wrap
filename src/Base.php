@@ -376,10 +376,10 @@ abstract class Base
     public function delTag($tag)
     {
         $key = array_search($tag, $this->tags);
-        if ($key !== false) {
-            unset($this->tags[$key]);
+        if ($key == false) {
             throw new AmoWrapException('Тэг не найден');
         }
+        unset($this->tags[$key]);
         return $this;
     }
 
